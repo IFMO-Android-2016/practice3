@@ -118,6 +118,8 @@ VKSdk.initialize(this);
 
 Если все работает правильно, то после логина должно быть показано короткое сообщение (тост) о результате логина.
 
+<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/login_successful.png" width="320px"/>
+
 Для того, чтобы не вызывать процедуру авторизации при каждом запуске приложения, токен можно сохранить в настройки и использовать при следующем запуске приложения:
 
 * Сохранять токен следует при помощи вызова ```token.saveTokenToSharedPreferences(VkDemoActivity.this, Constants.KEY_TOKEN)```
