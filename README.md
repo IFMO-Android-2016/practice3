@@ -144,7 +144,7 @@ VKSdk.initialize(this);
 * В методе ```VkDemoActivity.onLoggedIn(VKAccessToken token)``` написать код, который запустит асинхронное выполнение запроса users.get без параметра user_ids (запрос информации о текущем пользователе).
 * Чтобы самим не писать парсер, нужно у объекта запроса ```VKRequest``` перед выполнением запроса вызвать метод:
 ```
-request..setModelClass(VKUsersArray.class);
+request.setModelClass(VKUsersArray.class);
 ```
 тогда готовая модель ответа типа ```VKUsersArray``` окажется в поле ответа ```VKResponse.parsedModel```.
 * При получении результата выполнения запроса отобразить имя и фото пользователя, либо сообщение об ошибке.
