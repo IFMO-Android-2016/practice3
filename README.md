@@ -6,12 +6,17 @@
 
 Первый экран приложения (```MainActivity```) содержит только кнопку "Войти через ВКонтакте", по нажатию на которую открывается второй экран.
 
-<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/first_screen.png" width="480px"/>
+<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/first_screen.png" width="320px"/>
 
 Второй экран приложения (```VkDemoActivity```) при старте проверят, был ли пользователь приложения ранее уже авторизован во ВКонтакте, и если нет -- выполняет авторизацию при помощи VK SDK. В процессе этой авторизации может быть показан либо экран приложения ВКонтакте, если оно установлено на устройстве, либо страница мобильного сайта ВКонтакте, показанная в WebView внутри приложения. После успешной авторизации выполняется запрос информации о пользовтеле и показывается его фотография и имя. По нажатию на кнопку "Выйти" происходит выход на первый экран, чтобы можно было снова залогиниться тем же или другим пользователем.
 
-<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/vk_oauth_screen.png" width="480px"/>
-<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/user_info_screen.png" width="480px"/>
+<table>
+<tr>
+<td><img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/vk_oauth_screen.png" width="320px"/></td>
+<td><img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/user_info_screen.png" width="320px"/></td>
+</tr>
+</table>
+
 
 
 
