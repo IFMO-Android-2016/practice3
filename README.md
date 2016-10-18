@@ -54,19 +54,20 @@ keytool -exportcert -alias androiddebugkey -keystore C:/Users/<имя польз
 * Зайти на страницу для разработчиков ВКонтакте: https://vk.com/dev
 * Нажать "Создать приложение"
 
-<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/01_register_app.png" width="480px"/>
+<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/01_register_app.png" width="640px"/>
 
 * Ввести любое название приложения, выбрать вариант "Standalone" и нажать "Подключить приложение"
 
-<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/02_register_app.png" width="480px"/>
+<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/02_register_app.png" width="640px"/>
 
 * Пройти предложенную верификацию (через приложение или SMS -- как вам нравится)
 * После успешной верификации зайти в настройки зарегистрированного приложения и получить там ID приложения
 
-<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/03_register_app.png" width="480px"/>
+<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/03_register_app.png" width="640px"/>
 
 * Там же в настройках приложения ввести 
    * Android application ID (которое вы прописали в ```app/build.gradle```)
    * Название активности ```ru.ifmo.droid2016.vkdemo.VkDemoActivity```
    * Ваш отпечаток сертификата (полученный ранее при помощи keytool)
 
+<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/04_register_app.png" width="640px"/>
