@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.ifmo.droid2016.vkdemo">
 
-    <!-- TODO: Task1 - добавить разрешение на интернет -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".VkDemoApplication"
@@ -21,7 +21,10 @@
             </intent-filter>
         </activity>
 
-        <!-- TODO: Task1 - добавить активность для Vk SDK -->
+        <activity
+            android:name="com.vk.sdk.VKServiceActivity"
+            android:label="ServiceActivity"
+            android:theme="@style/VK.Transparent" />
 
     </application>
 
