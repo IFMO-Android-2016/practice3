@@ -69,5 +69,42 @@ keytool -exportcert -alias androiddebugkey -keystore C:/Users/<имя польз
    * Android application ID (которое вы прописали в ```app/build.gradle```)
    * Название активности ```ru.ifmo.droid2016.vkdemo.VkDemoActivity```
    * Ваш отпечаток сертификата (полученный ранее при помощи keytool)
+* Не забыть нажать "Сохранить изменения"
 
 <img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/04_register_app.png" width="640px"/>
+
+### Интеграция Vk SDK в коде приложения
+
+Следовать дальше инструкциям [https://vk.com/dev/android_sdk?f=2.%20%D0%9F%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8](https://vk.com/dev/android_sdk?f=2.%20%D0%9F%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8)
+
+* Указать зависимость на Vk SDK в файле ```app/build.gradle```, добавив строчку в раздел dependencies (это пункт 2.1 инструкций, пункты 2.2 - 2.4 пропустить):
+```
+    compile 'com.vk:androidsdk:1.6.7' 
+```
+* В файл ```app/src/main/AndroidManifest.xml``` добавить рарешение на доступ в Интернет:
+```
+    <uses-permission android:name="android.permission.INTERNET" />
+```
+* Туда же в манифесте добавить запись об активности, которая используется Vk SDK для OAuth авторизации:
+```
+    <activity
+            android:name="com.vk.sdk.VKServiceActivity"
+            android:label="ServiceActivity"
+            android:theme="@style/VK.Transparent" />
+```
+* Создать файл ресурсов ```vk.xml``` в папке ```app/src/main/res/values``` и прописать в нем ID приложения, полученный при регистрации приложения в API Вконтакте:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="com_vk_sdk_AppId">ID приложения, зарегистрированного в API ВКонтакте</integer>
+</resources>
+```
+* В коде ```VkDemoApplicatiom.onCreate``` добавить инициализацию Vk SDK:
+```
+VKSdk.initialize(this);
+```
+
+После выполнения этой части задания приложение готово к использованию функционала Vk SDK, однако видимого результата не видно -- еще никакой полезный код не написан. Можно убедиться, что приложение собирается и запускается. 
+
+### Выполнение авторизации ВКонтакте
+
