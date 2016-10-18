@@ -66,7 +66,6 @@ public class VkDemoActivity extends AppCompatActivity {
 
 
     protected void onLoggedIn(VKAccessToken token) {
-        // TODO: Task 2 - этот метод должен быть вызван в случае успешного логина
         Log.d(TAG, "onLoggedIn: " + token);
         Toast.makeText(this, R.string.login_successful, Toast.LENGTH_LONG).show();
 
@@ -74,7 +73,6 @@ public class VkDemoActivity extends AppCompatActivity {
     }
 
     protected void onLoginFailed(VKError error) {
-        // TODO: Task 2 - этот метод должен быть вызван в случае ошибки логина
         Log.w(TAG, "onLoginFailed: " + error);
         Toast.makeText(this, R.string.login_failed, Toast.LENGTH_LONG).show();
         finish();
