@@ -58,6 +58,8 @@ public class VkDemoActivity extends AppCompatActivity {
         // TODO: Task 2 - этот метод должен быть вызван в случае успешного логина
         Log.d(TAG, "onLoggedIn: " + token);
         Toast.makeText(this, R.string.login_successful, Toast.LENGTH_LONG).show();
+
+        // TODO: Task 3 - начать загрузку информации о текущем пользователе
     }
 
     protected void onLoginFailed(VKError error) {
