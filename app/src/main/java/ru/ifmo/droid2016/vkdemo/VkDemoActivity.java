@@ -13,8 +13,10 @@ import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.vk.sdk.VKAccessToken;
+import com.vk.sdk.VKCallback;
 import com.vk.sdk.VKSdk;
 import com.vk.sdk.api.VKError;
+import com.vk.sdk.api.model.VKScopes;
 
 public class VkDemoActivity extends AppCompatActivity {
 
@@ -29,9 +31,18 @@ public class VkDemoActivity extends AppCompatActivity {
 
         initContentView();
 
-        // TODO: Task 2 - здесь должен быть код, который проверяет -- есть ли у нас ранее
+        // Код, который проверяет -- есть ли у нас ранее
         // сохраненный токен -- и если нет, то инициирует процедуру авторизации в Vk SDK.
         // А если есть, то сразу вызывает onLoggedIn
+        VKAccessToken token = VKAccessToken.tokenFromSharedPreferences(this, Constants.KEY_TOKEN);
+        if (token != null) {
+            Log.d(TAG, "onCreate: using saved token");
+            onLoggedIn(token);
+
+        } else if (savedInstanceState == null) {
+            Log.d(TAG, "onCreate: token is missing, performing login...");
+            VKSdk.login(this, VKScopes.PHOTOS);
+        }
     }
 
     protected void initContentView() {
@@ -71,7 +82,18 @@ public class VkDemoActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO: Task 2 - Здесть дожлен быть код, обрабатывающий результат логина в VKSdk
+        VKSdk.onActivityResult(requestCode, resultCode, data, new VKCallback<VKAccessToken>() {
+            @Override
+            public void onResult(VKAccessToken token) {
+                token.saveTokenToSharedPreferences(VkDemoActivity.this, Constants.KEY_TOKEN);
+                onLoggedIn(token);
+            }
+
+            @Override
+            public void onError(VKError error) {
+                onLoginFailed(error);
+            }
+        });
     }
 
     /**
