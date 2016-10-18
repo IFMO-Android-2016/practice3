@@ -146,6 +146,6 @@ VKSdk.initialize(this);
 ```
 request..setModelClass(VKUsersArray.class);
 ```
-тогда готовая модель ответа типа ```VKUsersArray``` окажется в поле ответа ```VKRespomse.parsedModel```.
+тогда готовая модель ответа типа ```VKUsersArray``` окажется в поле ответа ```VKResponse.parsedModel```.
 * При получении результата выполнения запроса отобразить имя и фото пользователя, либо сообщение об ошибке.
 
