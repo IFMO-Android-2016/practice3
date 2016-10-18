@@ -48,3 +48,25 @@ keytool -exportcert -alias androiddebugkey -keystore C:/Users/<имя польз
 ```
 
 Из которой надо взять шестнадцатеричное значение, удалив все двоеточия -- это и будет отпечаток сертификата, как он используется для идентификации приложения в API ВКонтакте: ```CD4C0748CD1AD063DB439F57245A4990C733218E```.
+
+### Зарегистрировать приложение в API Вконтакте
+
+* Зайти на страницу для разработчиков ВКонтакте: https://vk.com/dev
+* Нажать "Создать приложение"
+
+<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/01_register_app.png" width="480px"/>
+
+* Ввести любое название приложения, выбрать вариант "Standalone" и нажать "Подключить приложение"
+
+<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/02_register_app.png" width="480px"/>
+
+* Пройти предложенную верификацию (через приложение или SMS -- как вам нравится)
+* После успешной верификации зайти в настройки зарегистрированного приложения и получить там ID приложения
+
+<img src="https://github.com/IFMO-Android-2016/practice3/blob/master/screenshots/03_register_app.png" width="480px"/>
+
+* Там же в настройках приложения ввести 
+   * Android application ID (которое вы прописали в ```app/build.gradle```)
+   * Название активности ```ru.ifmo.droid2016.vkdemo.VkDemoActivity```
+   * Ваш отпечаток сертификата (полученный ранее при помощи keytool)
+
