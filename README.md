@@ -99,7 +99,7 @@ keytool -exportcert -alias androiddebugkey -keystore C:/Users/<имя польз
     <integer name="com_vk_sdk_AppId">ID приложения, зарегистрированного в API ВКонтакте</integer>
 </resources>
 ```
-* В коде ```VkDemoApplicatiom.onCreate``` добавить инициализацию Vk SDK:
+* В коде ```VkDemoApplication.onCreate``` добавить инициализацию Vk SDK:
 ```
 VKSdk.initialize(this);
 ```
